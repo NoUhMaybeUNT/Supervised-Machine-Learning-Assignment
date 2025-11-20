@@ -102,11 +102,44 @@ def train_and_evaluate(df):
             else:
                 print(f" Node {node_id}: leaf node.")
 
+    # Evaluation & discussion output to reflect assignment requirements
+    print("\n--- Evaluation & Discussion ---")
+    print(f"Tree depth: {clf.get_depth()} | Number of leaves: {clf.get_n_leaves()}")
+
+    # Summarize top features
+    if (importances > 0).any():
+        top_feats = importances[importances > 0].head(5)
+        print("Top contributing features (by impurity decrease):")
+        for feat, val in top_feats.items():
+            print(f" - {feat}: {val:.3f}")
+    else:
+        print("Feature importance not informative (all zeros).")
+
+    print("\nInterpretability:")
+    print(" - The model is a decision tree with axis-aligned splits on one-hot encoded features.")
+    print(" - Since one-hot columns are binary, thresholds ~0.5 correspond to rules like 'feature present vs not present'.")
+
+    print("\nDecision boundaries:")
+    print(" - Each split partitions the space based on a single encoded category, forming simple if-then rules.")
+    print(" - See 'Decision paths' above for explicit rules followed by e19 and e20.")
+
+    # Basic limitations
+    reads_count = int(y.iloc[0:18].sum())
+    skips_count = int((1 - y.iloc[0:18]).sum())
+    print("\nLimitations:")
+    print(f" - Small training set (n=18) risks overfitting; class balance reads={reads_count}, skips={skips_count}.")
+    print(" - Categorical handling via one-hot increases dimensionality; deeper trees may latch onto noise.")
+    print(" - 'Length' is treated as categorical (short/long); no ordinal modeling here.")
+    print(" - Contextual factors (e.g., author reputation dynamics, time) are not modeled.")
+
 
 def main():
     df = build_dataset()
     print("Dataset preview (first 10 rows):\n")
     print(df.head(10))
+    # Save a structured representation to CSV to reflect preprocessing requirement
+    df.to_csv("dataset_figure7_1.csv", index=False)
+    print("\nSaved structured dataset to dataset_figure7_1.csv")
     train_and_evaluate(df)
 
 
