@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier, export_text, plot_tree
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 
 def build_dataset():
@@ -80,8 +81,13 @@ def train_and_evaluate(df):
     plot_tree(clf, feature_names=feature_names, class_names=["skips", "reads"], filled=True)
     plt.title("Decision Tree trained on e1..e18")
     plt.tight_layout()
-    plt.savefig("decision_tree.png")
-    print('\nSaved tree visualization to `decision_tree.png`.')
+    # Save into the repository's outputs/ folder regardless of current working directory
+    repo_root = Path(__file__).resolve().parents[1]
+    outputs_dir = repo_root / "outputs"
+    outputs_dir.mkdir(exist_ok=True)
+    tree_png = outputs_dir / "decision_tree.png"
+    plt.savefig(tree_png)
+    print(f'\nSaved tree visualization to: {tree_png}')
 
     # Show decision path for each test example
     print('\nDecision paths for test examples:')
@@ -138,8 +144,12 @@ def main():
     print("Dataset preview (first 10 rows):\n")
     print(df.head(10))
     # Save a structured representation to CSV to reflect preprocessing requirement
-    df.to_csv("dataset_figure7_1.csv", index=False)
-    print("\nSaved structured dataset to dataset_figure7_1.csv")
+    repo_root = Path(__file__).resolve().parents[1]
+    outputs_dir = repo_root / "outputs"
+    outputs_dir.mkdir(exist_ok=True)
+    csv_path = outputs_dir / "dataset_figure7_1.csv"
+    df.to_csv(csv_path, index=False)
+    print(f"\nSaved structured dataset to: {csv_path}")
     train_and_evaluate(df)
 
 
