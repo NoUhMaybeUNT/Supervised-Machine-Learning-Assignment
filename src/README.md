@@ -51,28 +51,28 @@ On the cell machine, the following worked from the repo root (exit code 0):
 
 ## Rubric Fulfillments
 
-# Data Preprocessing — 15 pts
+- Data Preprocessing — 15 pts
     - One-hot encoding implemented
     - Structured dataset generated to outputs/dataset_figure7_1.csv
 
-# Decision Tree Implementation — 30 pts
+- Decision Tree Implementation — 30 pts
     - scikit-learn DecisionTreeClassifier with entropy and fixed random_state
     - Trains on e1–e18 as required
 
-# Prediction Accuracy & Justification — 15 pts
+- Prediction Accuracy & Justification — 15 pts
     - Predictions for e19/e20 printed with actuals
     - Tiny metric added: test accuracy on e19–e20 = 0.50
     - Per-case decision-path justifications printed and saved
 
-# Tree Visualization — points implied
+- Tree Visualization — points implied
     - Graphical tree saved to outputs/decision_tree.png
     - Textual tree saved to outputs/decision_tree.txt
     - Decision paths saved to outputs/decision_paths.txt
 
-# Code Quality & Documentation — 10 + 5 pts
+- Code Quality & Documentation — 10 + 5 pts
     - Docstrings added for main functions
     - Clear run instructions in README.md (repo-relative, venv, UNT Linux specific)
     - Status: complete (Optionally add a one-line “see README.md for run instructions” to the top-level README for belt-and-suspenders)
 
-# Report Clarity & Structure — 1–2 pages
+- Report Clarity & Structure — 1–2 pages
     - Attatched seperately from the project files
