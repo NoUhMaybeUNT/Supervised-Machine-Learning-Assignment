@@ -69,3 +69,34 @@ Students need to write a computer program to implement a decision tree learner o
 	- Discuss the interpretability of your tree.
 	- Analyze feature importance and decision boundaries.
 	- Reflect on limitations (e.g., overfitting, small dataset size).
+
+## Rubric
+
+- Data Preprocessing
+	- Proper encoding of categorical features; clean, structured dataset ready for modeling.
+		- 15 Points
+
+- Decision Tree Implementation
+	- Correct use of algorithm (custom or library); handles training data accurately.
+		- 30 Points
+
+- Prediction Accuracy & Justification
+	- Predictions for e₁₉ and e₂₀ are logically sound and supported by model reasoning.
+		- 15 Points
+
+- Tree Visualization
+	- Clear and interpretable tree structure; includes decision paths for test examples.
+
+- Code Quality & Documentation
+	- Clean, modular code with comments explaining key steps and logic. 
+		- 10 pts
+	- README (document on how to execute your codes) 
+		- 5 pts
+
+- Report Clarity & Structure
+	- Well-organized report with overview, results, and reflections; professional tone.
+		- Report (1-2 pages):
+			- Overview of your approach
+			- Tree visualization
+			- Predictions for e₁₉ and e₂₀
+			- Discussion of results and limitations
