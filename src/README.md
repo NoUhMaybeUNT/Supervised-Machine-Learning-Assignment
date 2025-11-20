@@ -5,16 +5,16 @@ This solution builds the Figure 7.1 dataset, trains a decision tree on e1–e18,
 One-time setup (create a venv in the repo)
 Run these commands from the repository root (Supervised-Machine-Learning-Assignment):
 
-   python3 --version
-   python3 -m venv .venv
-   source .venv/bin/activate
-   python -m pip install --upgrade pip
-   pip install -r requirements.txt
+- python3 --version
+- python3 -m venv .venv
+- source .venv/bin/activate
+- python -m pip install --upgrade pip
+- pip install -r requirements.txt
 
 Run the solution
 From the same repository root with the venv active:
 
-   python src/decision_tree_solution.py
+- python src/decision_tree_solution.py
 
 Notes
 - If your local path to the repo contains spaces (e.g., inside "Programming Assignments/Assignment4"), quote the path when cd'ing into it. After cd'ing into Supervised-Machine-Learning-Assignment, the commands above work as-is.
