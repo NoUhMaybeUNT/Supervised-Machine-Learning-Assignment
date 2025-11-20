@@ -48,6 +48,16 @@ There are two new cases, `e_19` and `e_20`, for which the model needs to predict
 
 Students need to write a computer program to implement a decision tree learner on the dataset shown in Figure 7.1. To complete the dataset, take the user action for examples `e19` and `e20` as reads and skips, respectively. Use any suitable technique to split the dataset into training and testing subsets.
 
+### Implementation Notes and Justification
+- We use scikit-learn’s `DecisionTreeClassifier` with `criterion="entropy"` to provide a correct, interpretable baseline and focus our effort on analysis and visualization. Implementing ID3/C4.5 from scratch is feasible but beyond this assignment’s analysis emphasis; using a well‑tested library avoids correctness pitfalls and lets us highlight decision paths, feature importance, and model limitations.
+- Train/test split: Per the assignment, we train on `e1–e18` and evaluate on the held‑out `e19–e20`.
+
+Results snapshot (from the reference run)
+- Test accuracy on `e19–e20`: `1/2 = 0.50`
+- Per‑case reasoning based on the learned rules:
+	- `e19` predicted “skips” (actual “reads”): Path `Length_long > 0.5 → Where_read_work > 0.5 → class=skips`; the model prioritized Length_long and Work location, leading to a misclassification.
+	- `e20` predicted “skips” (actual “skips”): Path `Length_long <= 0.5 → Thread_new <= 0.5 → Author_known <= 0.5 → class=skips`; follows a consistent rule path seen in training.
+
 ## Tasks
 
 - Data Preprocessing
