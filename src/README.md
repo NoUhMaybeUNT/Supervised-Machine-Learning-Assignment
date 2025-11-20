@@ -2,8 +2,6 @@ Decision Tree Solution — UNT Linux Cell Machines (I Generated these instructio
 
 This solution builds the Figure 7.1 dataset, trains a decision tree on e1–e18, and predicts e19 and e20. It also prints a text view of the tree and saves a PNG visualization.
 
-These instructions are generic and use only paths relative to the repository root folder: Supervised-Machine-Learning-Assignment.
-
 One-time setup (create a venv in the repo)
 Run these commands from the repository root (Supervised-Machine-Learning-Assignment):
 
@@ -21,6 +19,7 @@ From the same repository root with the venv active:
 Notes
 - If your local path to the repo contains spaces (e.g., inside "Programming Assignments/Assignment4"), quote the path when cd'ing into it. After cd'ing into Supervised-Machine-Learning-Assignment, the commands above work as-is.
 - Reuse this .venv for subsequent runs. To leave the virtual environment: deactivate
+- The outputs/ folder is gitignored; artifacts are generated when you run the program.
 
 What you’ll see
 - A preview of the dataset (first 10 rows)
